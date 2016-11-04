@@ -1,0 +1,360 @@
+---
+Language:        Cpp
+#这种格式针对的是语言。
+#可能的值有：
+#LK_None (在配置中： None) 不使用
+#LK_Cpp (在配置中： Cpp) 应该被用于C, C++, ObjectiveC, ObjectiveC++.
+#LK_Java (在配置中： Java) 应该被用于Java.
+# LK_JavaScript (在配置中： JavaScript) 应该被用于 JavaScript.
+# LK_Proto (在配置中： Proto) 应该被用于 Protocol 缓冲 (https://developers.google.com/protocol-buffers/).
+# LK_TableGen (在配置中： TableGen) 应该被用于 TableGen 代码.
+
+
+# BasedOnStyle:  Google
+# 用于所有没有特殊指定配置的选项默认项
+
+AccessModifierOffset: -1
+# 访问修饰符的缩进或者向外伸展,例如 public:。
+
+AlignAfterOpenBracket: Align
+# 如果为真（true），在一个左圆括号后水平对齐参数
+# 这会应用在圆括号，尖括号和中（方）括号。
+# 可能的值有：
+# BAS_Align (在配置中: Align) 在左圆括号后调整参数, 例如:
+# someLongFunction(argument1,
+#                  argument2);
+
+# BAS_DontAlign (在配置中: DontAlign) 不调整, 换用 ContinuationIndentWidth, 例如:
+# someLongFunction(argument1,
+#     argument2);
+
+# BAS_AlwaysBreak (在配置中: AlwaysBreak) 在左圆括号后总是换行, 如果参数不能适应单行, 例如:
+# someLongFunction(
+#     argument1, argument2);
+
+AlignConsecutiveAssignments: false
+# 如果为真（true），连续调整多行
+# 这将会调整连续行中的分配操作符。这将会导致像下面这样的格式：
+# int aaaa = 12;
+# int b    = 23;
+# int ccc  = 23;
+
+AlignConsecutiveDeclarations: false
+# 如果为真（true）, 校准连续的声明。
+# 这将会校准连续多行的声明的名字。这将会导致像下面这样的格式：
+# int         aaaa = 12;
+# float       b = 23;
+# std::string ccc = 23;
+
+AlignEscapedNewlinesLeft: true
+# 如果为真（true）, 被换行的新行距左边尽可能近.否则把它们放到列的最右边
+
+AlignOperands:   true
+# 如果为真（true）, 水平对齐二元和三元表达式的操作数.
+# 具体来说，这将一个表达式的操作数对准一个需要被分割的多行的操作数, 例如:
+# int aaa = bbbbbbbbbbbbbbb +
+#           ccccccccccccccc;
+
+AlignTrailingComments: true
+# 如果为真（true）, 对齐行尾注释.
+
+AllowAllParametersOfDeclarationOnNextLine: true
+# 即使BinPackParameters选项为false，也允许将一个函数声明的所有参数移到下一行.
+
+AllowShortBlocksOnASingleLine: false
+# 允许将简单的语句块放到一个单行.
+# 例如, 这允许 将 语句 “if (a) { return; }” 放到一个单行.
+
+AllowShortCaseLabelsOnASingleLine: false
+# 如果为真（true）, 很短的情况下的标签也会被放到单独的行.
+
+AllowShortFunctionsOnASingleLine: All
+# 语句(单行函数定义)"int f() { return 0; }"是否可以被放到一个单行.
+# 可能的值有：
+# SFS_None (在配置中： None) 从不合并方法或函数到单独的一行.
+# SFS_Empty (在配置中： Empty) 仅合并空的函数.
+# SFS_Inline (在配置中: Inline) 仅合并在类中定义的方法或函数(包含空行).
+# SFS_All (在配置中: All) 合并所有的方法适应单行.
+
+AllowShortIfStatementsOnASingleLine: true
+# 如果为真（true）, 允许单行语句"if (a) return;".
+
+AllowShortLoopsOnASingleLine: true
+# 如果为真（true）, 允许单行语句"while (true) continue;".
+
+AlwaysBreakAfterDefinitionReturnType: None
+# 用于函数定义返回类型换行样式.这个选项是过时的并且被保留向后兼容.
+# 可能的值有:
+# DRTBS_None (在配置中: None) 在返回类型后自动换行.PenaltyReturnTypeOnItsOwnLine 会被考虑到.
+# DRTBS_All (在配置中: All) 总是在返回类型后换行.
+# DRTBS_TopLevel (在配置中: TopLevel) 总是在返回类型的顶级函数后换行.
+
+AlwaysBreakAfterReturnType: None
+用于函数声明返回类型换行样式.
+# 可能的值有:
+# RTBS_None (在配置中: None) 在返回类型后自动换行."PenaltyReturnTypeOnItsOwnLine"会被考虑.
+# RTBS_All (在配置中: All) 再返回类型后总是换行.
+# RTBS_TopLevel (在配置中: TopLevel) 在方法的顶层的返回类型后总是换行.
+# RTBS_AllDefinitions (在配置中: AllDefinitions) 在方法定义中的返回类型后总是换行.
+# RTBS_TopLevelDefinitions (在配置中: TopLevelDefinitions) 在顶层定义的返回类型后总是换行.
+
+AlwaysBreakBeforeMultilineStrings: true
+# 如果为真（true）, 在多行字面量字符串前总是换行.
+# 这个标志意味着使在文件中有多行字符串的情况看起来更一致.
+# 因此，如果字符串被"ContinuationIndentWidth"空格导致换行，它将会在行首生效.
+
+AlwaysBreakTemplateDeclarations: true
+# 如果为真（true）, 在模板声明"template<...>"后总是换行
+
+BinPackArguments: true
+# 如果为假（false）， 函数调用的参数要么是在同一行上，要么各占一行.
+
+BinPackParameters: true
+如果为假（false）， 函数声明或函数定义的参数要么都在同一行上，要么各占一行.
+
+BraceWrapping:   
+# 控制单独的大括号换行选项.
+# 如果"BreakBeforeBraces"设置为"BS_Custom"
+# 使用这个指定如何处理每个单独的括号的情况.否则，这是被忽略的.
+  AfterClass:      false
+  # 使类定义换行.
+  AfterControlStatement: false
+  # 使控制语句(if/for/while/switch/..)换行.
+  AfterEnum:       false
+  # 使枚举定义换行.
+  AfterFunction:   false
+  # 使方法定义换行.
+  AfterNamespace:  false
+  # 使命名空间定义换行.
+  AfterObjCDeclaration: false
+  # 使OC定义(@autoreleasepool, interfaces, ..)换行.
+  AfterStruct:     false
+  # 使结构定义换行.
+  AfterUnion:      false
+  # 使共同体定义换行.
+  BeforeCatch:     false
+  # 在catch之前换行.
+  BeforeElse:      false
+  # 在else之前换行.
+  IndentBraces:    false
+  # 缩进换行的大括号.
+
+BreakBeforeBinaryOperators: None
+# 使二进制操作符换行的方法.
+# 可能的值有:
+# BOS_None (在配置中: None) 在操作符后换行.
+# BOS_NonAssignment (在配置中: NonAssignment) 在操作符没有被指定前换行.
+# BOS_All (在配置中: All) 在操作符前换行.
+
+BreakBeforeBraces: Attach
+# 用于左大括号换行样式.
+# 可能的值有:
+# BS_Attach (在配置中: Attach) 总是将左大括号与上下文连在一起.
+# BS_Linux (在配置中: Linux) 像Attach一样, 但是在一个方法、命名空间或一个类定义的大括号之前换行
+# BS_Mozilla (在配置中: Mozilla) 像Attach一样, 但是在一个枚举、方法或记录定义前换行.
+# BS_Stroustrup (在配置中: Stroustrup) 像Attach一样,但是在方法定义、catch、和else前换行
+# BS_Allman (在配置中: Allman) 总是在大括号之前换行.
+# BS_GNU (在配置中: GNU) 总是在括号前中断，并添加一个额外的级别的缩进到控件语句的括号中，而不是类、函数或其他定义的括号中.
+# BS_WebKit (在配置中: WebKit) 像Attach一样, 但是在方法前换行.
+# BS_Custom (在配置中: Custom) 在"BraceWrapping"里配置每一个单独的大括号.
+
+BreakBeforeTernaryOperators: true
+# 如果为真（true）, 三元运算符将被放置在换行后.
+
+BreakConstructorInitializersBeforeComma: false
+# 总是在逗号和对齐逗号跟冒号前把构造函数初始化式换行.
+
+BreakAfterJavaFieldAnnotations: false
+BreakStringLiterals: true
+# 当格式化时，总是对字面量字符串换行.
+
+ColumnLimit:     80
+# 限制列.
+# 列的限制为0意味着没有列限制.在这种情况下，clang-format将谨慎对待在声明中输入行的换行决定，除非与其他规则矛盾.
+
+CommentPragmas:  '^ IWYU pragma:'
+# 一个固定的表达式，它描述了具有特殊意义的注释，不应该被分裂成行或被其他方式改变.
+
+ConstructorInitializerAllOnOneLineOrOnePerLine: true
+# 如果构造函数初始化器不适合在一行，把每个初始化语句放到单独的行.
+
+ConstructorInitializerIndentWidth: 4
+# 使用构造函数初始化列表缩进的字符数.
+
+ContinuationIndentWidth: 4
+# 续行缩进列数.
+
+Cpp11BracedListStyle: true
+# 如果为真（true）,大括号初始化列表最适合c++11列表.
+# 重要区别:-没有空格内的大括号列表.-大括号关闭前没有换行.进行延续缩进缩进，不进行块缩进.
+# 从根本上讲，C++ 11大括号初始化列表与函数调用格式化是一模一样的.
+# 如果大括号列表跟着一个名字（例如类型或变量名），clang-format的格式像是一个调用那个名字的函数的圆括号的"{}".
+# 如果没有名称，则假定一个零长度的名称.
+
+DerivePointerAlignment: true
+# 如果为真（true）, 分析最常见的格式化文件中"&"和"*"的对齐方式.
+# pointeralignment则仅作为后备.
+
+DisableFormat:   false
+# 完全禁止格式化.只生成警告?
+
+ExperimentalAutoDetectBinPacking: false
+# 如果为真（true）, clang-format检测函数调用和定义格式化为每个参数占一行.
+# 每个调用都可以被包装，每行一个或不确定的.
+# 如果是不确定的，例如完全在一行，但需要做出一个决定，clang-format分析文件中是否有其他被包装的事例和相应的行动.
+# 注意:这是一个实验标志，可能会消失或被重命名.不要在配置文件中使用.你自己要为你的使用负责.
+
+ForEachMacros:   [ foreach, Q_FOREACH, BOOST_FOREACH ]
+# 一个宏，应解释为foreach循环而不是作为函数调用矢量.
+# 这些都是预期形式的宏:
+# FOREACH(<variable-declaration>, ...)
+#   <loop-body>
+# 在.clang-format 配置文件中, 这可以被设定为:
+# ForEachMacros: ['RANGES_FOR', 'FOREACH']
+# 例如: BOOST_FOREACH.
+
+IncludeCategories: 
+# 正则表达式指定的包含策略与优先级
+# 这些正则表达式与一个包含（包括< >或"）的文件的文件名相匹配.
+# 属于第一匹配正则表达式的值被分配，并且# include首先根据增加类别数然后在每个类别按字母的顺序排序.
+# 如果正则表达式都不匹配，int_max分配类别.源文件的主要头引用自动获取类别0.
+# 因此，它通常是保持在# include开头（http://llvm.org/docs/CodingStandards.html# include-style）.
+# 然而，如果你有总是需要排在首位的头引用，你也可以分配负值的来提高优先级.
+# 为了在.clang-format文件中配置这个, 请使用:
+  - Regex:           '^<.*\.h>'
+    Priority:        1
+  - Regex:           '^<.*'
+    Priority:        2
+  - Regex:           '.*'
+    Priority:        3
+
+IncludeIsMainRegex: '([-_](test|unittest))?$'
+# 主要为了适配xxx.cpp 文件首先要包含xxx.h
+# 指定一个主要包含的规则.规则优先级为0.
+# 在猜测是否# include是"main" include（指定类别0，见上文），使用这个正则表达式允许后缀的头引用源.
+# 部分匹配完成，所以说:-""意思是任意后缀，-"$"的意思是无匹配
+# 例如，如果配置"（_test）？$"，然后a.h将被视为包括在a.cc和a_test.cc中的"main".
+
+IndentCaseLabels: true
+# 从switch语句缩进case标签一级.
+# 当错误时，使用相同的缩进级别作为切换语句.switch语句的语句体总是缩进一级以上的case标签.
+
+IndentWidth:     2
+# 用于缩进的列数.
+
+IndentWrappedFunctionNames: false
+# 如果函数定义或声明被类型包裹,则进行缩进.
+
+JavaScriptQuotes: Leave
+JavaScriptWrapImports: true
+
+KeepEmptyLinesAtTheStartOfBlocks: false
+# 如果为真（true）, 不删除语句块起始位置的空行.
+
+MacroBlockBegin: ''
+# 匹配开始一个块的表达式的宏指令.
+
+MacroBlockEnd:   ''
+# 匹配结束一个块的表达式的宏指令.
+
+MaxEmptyLinesToKeep: 1
+# 最多允许的连续空行数.
+
+NamespaceIndentation: None
+# 用于命名空间的缩排.
+# 可能的值有:
+# NI_None (在配置中: None) 在命名空间中不缩进.
+# NI_Inner (在配置中: Inner) 仅在内部命名空间缩进(嵌套在其他命名空间).
+# NI_All (在配置中: All) 在所有的命名空间中缩进.
+
+ObjCBlockIndentWidth: 2
+ObjCSpaceAfterProperty: false
+ObjCSpaceBeforeProtocolList: false
+
+PenaltyBreakBeforeFirstCallParameter: 1
+# 在调用小括号"("后给一个方法调用换行的处罚.
+
+PenaltyBreakComment: 300
+# 包含在一个注释中的每一个换行的处罚.
+
+PenaltyBreakFirstLessLess: 120
+在第一个"<<"前的换行的处罚.
+
+PenaltyBreakString: 1000
+# 包含一个字面量的字符串中的每一个换行的处罚.
+
+PenaltyExcessCharacter: 1000000
+# 每一个字符超出列限制的处罚.
+
+PenaltyReturnTypeOnItsOwnLine: 200
+# 把一个方法返回类型放到函数的同一行的处罚.
+
+PointerAlignment: Left
+# 指针和引用的对其方式.
+# 可能的值有:
+# PAS_Left (在配置中: Left) 指针左对齐.
+# PAS_Right (在配置中: Right) 指针右对齐.
+# PAS_Middle (在配置中: Middle) 指针中间对齐.
+
+ReflowComments:  true
+# 如果为真(true）, clang-format 将会尝试将注释重新布局.
+
+SortIncludes:    true
+# 如果为真(true）, clang-format 将会排序# includes.
+
+SpaceAfterCStyleCast: false
+# 如果为真(true), 可能在一个C样式描述后插入一个空格.
+
+SpaceAfterTemplateKeyword: true
+# 如果为真(true), 在"template"关键字后插入一个空格.
+
+SpaceBeforeAssignmentOperators: true
+# 如果为假(false)，移除分配操作符(=)前空格.
+
+SpaceBeforeParens: ControlStatements
+# 定义圆括号前空格规则.
+# 可能的值有:
+# SBPO_Never (在配置中: Never) 从不在圆括号之前加空格.
+# SBPO_ControlStatements (在配置中: ControlStatements) 仅在控制语句关键词(for/if/while···)后的圆括号的前面加空格.
+# SBPO_Always (在配置中: Always) 总在圆括号前面加空格, 除了语法规则禁止的(在方法中-像宏定义)或者 当其他样式规则定义过的(在一元运算符后,圆括号, 等等)
+
+SpaceInEmptyParentheses: false
+# 如果为真(true), 会在"()"中插入空格.
+
+SpacesBeforeTrailingComments: 2
+# 单行注释前的空格数(// - comments).
+# 这不会影响块注释(/* - comments*/)，因为它们通常会有不同的使用模式和一些特殊情况.
+
+SpacesInAngles:  false
+# 如果为真(true), 将会在模板的括号"<>"中间插入空格.
+
+SpacesInContainerLiterals: true
+# 如果为真(true), 将会在字面量容器中插入空格(例如 OC和Javascript的数组和字典字面量).
+
+SpacesInCStyleCastParentheses: false
+# 如果为真(true), 将会在C风格转换中插入空格.
+
+SpacesInParentheses: false
+# 如果为真(true), 将会在"("之后和")"之前插入空格.
+
+SpacesInSquareBrackets: false
+# 如果为真(true),将会在"["之后和"]"之前插入空格.
+
+Standard:        Auto
+# 用这个标准格式化:例如:在LS_Cpp03中使用 A<A<int> > 而不是 A<A<int>>
+# 可能的值有:
+# LS_Cpp03 (在配置中: Cpp03) 使用Use C++03统一语法.
+# LS_Cpp11 (在配置中: Cpp11) 使用C++11的特征(例如 A<A<int>>而不是A<A<int> >).
+# LS_Auto (在配置中: Auto) 基于输入自动检查.
+
+TabWidth:        8
+# Tab列宽.
+
+UseTab:          Never
+# 在输出文件中使用Tab的方式.
+# 可能的值有:
+# UT_Never (在配置中: Never) 从不使用制表符.
+# UT_ForIndentation (在配置中: ForIndentation) 仅缩排时使用制表符.
+# UT_Always (在配置中: Always) 使用标签时，我们需要填补的空白，至少从一个制表位到下一个.
+
+...
